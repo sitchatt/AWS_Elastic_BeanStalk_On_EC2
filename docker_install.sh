@@ -19,13 +19,16 @@ echo "                                           "
 echo "################################"
 echo "Enabling and Starting docker"
 echo "################################"
+echo "                                           "
 
 sudo systemctl enable docker
 sudo systemctl start docker
 
+echo "                                           "
 echo "###################################"
 echo "Status of Docker Engine'
 echo "###################################"
+echo "                                           "
 
 sleep 2
 sudo systemctl status docker
