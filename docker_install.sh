@@ -26,7 +26,7 @@ sudo systemctl start docker
 
 echo "                                           "
 echo "###################################"
-echo "Status of Docker Engine'
+echo "Status of Docker Engine"
 echo "###################################"
 echo "                                           "
 
