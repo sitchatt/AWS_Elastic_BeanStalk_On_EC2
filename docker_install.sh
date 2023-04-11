@@ -22,4 +22,4 @@ sudo systemctl start docker
 sleep 2
 
 echo "################# Status of Docker Engine ##################"
-sudo systemctl Status docker
+sudo systemctl status docker
