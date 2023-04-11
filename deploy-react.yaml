@@ -1,0 +1,26 @@
+name : Deploy react application in BeanStalk
+on :
+    push:
+        branches:
+            - "main"
+jobs:
+    deploy: 
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout source code
+          uses: actions/checkout@v2
+
+        - name: Generate deployment package
+          run: zip -r deploy.zip . -x '*.git*'
+
+        - name: Deploy to EB
+          uses: einaregilsson/beanstalk-deploy@v21
+          with:
+            aws_access_key: ${{ secrets.AWS_ADMIN_ACCESS_KEY_ID }}
+            aws_secret_key: ${{ secrets.AWS_ADMIN_SECRET_ACCESS_KEY_ID }}
+            application_name: docker-react
+            environment_name: Dockerreact-env
+            version_label: ${{ github.sha }}
+            existing_bucket_name: elasticbeanstalk-us-east-1-354408555228
+            region: us-east-1
+            deployment_package: deploy.zip
