@@ -10,16 +10,22 @@ sudo apt-get update -y
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y 
 
 sleep 2
+echo "                                           "
 echo "############################################"
 echo "Successfully installed Docker Engine on your System"
 echo "############################################"
-sleep 1
-echo "############### Enabling and Starting docker ##################"
+sleep 3
+echo "                                           "
+echo "################################"
+echo "Enabling and Starting docker"
+echo "################################"
 
 sudo systemctl enable docker
 sudo systemctl start docker
 
-sleep 2
+echo "###################################"
+echo "Status of Docker Engine'
+echo "###################################"
 
-echo "################# Status of Docker Engine ##################"
+sleep 2
 sudo systemctl status docker
